@@ -31,8 +31,8 @@ public class StudentServiceTest {
 
         List<Student> res = service.getAllStudentsByAvgGreaterThan5(input);
 
-        assertEquals("Должен быть только один студент с avg>5.0",1, res.size()  );
-        assertTrue("В результат должен попасть только Boris Ivanov",res.contains(s2));
+        assertEquals("There should be only one student with avg > 5.0",1, res.size()  );
+        assertTrue("Only Boris Ivanov should be included in the result",res.contains(s2));
     }
 
     @Test
@@ -44,7 +44,7 @@ public class StudentServiceTest {
 
         List<Student> result = service.getAllStudentsByAvgGreaterThan5(List.of(s1));
 
-        assertTrue("Никто не должен пройти, если avg≤5.0",result.isEmpty());
+        assertTrue("No student should pass if avg ≤ 5.0",result.isEmpty());
     }
 
     @Test
@@ -71,8 +71,8 @@ public class StudentServiceTest {
 
         List<String> result = service.getPhysicsStudentsNames(all);
 
-        assertEquals("Должен быть только один студент с Physics",1, result.size());
-        assertTrue("Имя и фамилия Alice должны присутствовать",result.contains("Alice Ivanova"));
+        assertEquals("There should be only one student with the Physics course",1, result.size());
+        assertTrue( "The name and surname 'Alice Ivanova' should be present",result.contains("Alice Ivanova"));
     }
 
 }
